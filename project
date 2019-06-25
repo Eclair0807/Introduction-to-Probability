@@ -1,0 +1,57 @@
+---
+title: "Exploring the BRFSS data"
+output: 
+  html_document: 
+    fig_height: 4
+    highlight: pygments
+    theme: spacelab
+---
+
+## Setup
+
+### Load packages
+
+```{r load-packages, message = FALSE}
+library(ggplot2)
+library(dplyr)
+library(colorspace)
+library(tidyr)
+library(pander)
+```
+
+### Load data
+
+```{r load-data}
+ load("C:/Users/Cong Wang/Desktop/Duke/Introduction to Probability/final project/brfss2013.rdata")
+```
+
+
+* * *
+  
+## Part 1: Data -word
+  
+* * *
+
+
+  ## Part 2: Research questions
+  
+**Research quesion 1: ** 
+Is there a correlation between sleptim1 and poorhlth, as well as scntwork1 and poorhlth? <br />
+poorhlth: Poor Physical Or Mental Health
+sleptim1: How Much Time Do You Sleep <br />
+scntwrk1: How Many Hours Per Week Do You Work <br />
+
+  
+  
+**Research quesion 2:** <br />
+  
+**Research quesion 3:** <br />
+
+* * *
+## Part 3: Exploratory data analysis
+* * *
+
+
+
+
+

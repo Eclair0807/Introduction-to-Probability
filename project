@@ -51,7 +51,31 @@ scntwrk1: How Many Hours Per Week Do You Work <br />
 ## Part 3: Exploratory data analysis
 * * *
 
+**Research quesion 1:**
+  
+```{r}
+cleandata <- function(...){
+  mydata <- brfss2013 %>%
+  select(...) 
+  return(mydata[complete.cases(mydata),])
+}
+```
+  
+```{r}
 
+data1 <- cleandata(poorhlth,sleptim1,scntwrk1) %>%
+  
+  filter(poorhlth!=0) %>%
+
+  group_by(sleptim1) %>% 
+  summarize(Q1 = quantile(poorhlth, 0.25), MEAN = mean(poorhlth), MEDIAN = median(poorhlth),Q3 = quantile(poorhlth, 0.75), IQR = IQR(poorhlth), STDEV = sd(poorhlth)) %>%
+  mutate(SKEW = ifelse(MEAN > MEDIAN, "RIGHT", "LEFT"))
+
+
+
+pandoc.table(head(data1), caption = "Fig. 1-0 - Observations 1 to 6 of 65230 for output data frame `dat1`...", justify = "center")
+
+```
 
 
 
